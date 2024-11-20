@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    
+    <body>
+        <script>
+let x = parseInt(prompt("Digite su primer numero"));
+let y = parseInt(prompt("Digite su segundo número"));
+let z = prompt("Qué operación desea hacer?").toLowerCase();
+
+console.log(x, y);
+
+const calculadora = (x, y, z) => {
+    if (isNaN(x) || isNaN(y)) {
+        alert("Ambos valores deben ser números");
+        return;
+    } else {
+        switch (z) {
+            case "suma":
+            case "+":
+                alert(x + y );
+                break;
+            case "resta":
+            case "-":
+                alert(x - y );
+                break;
+            case "multiplicacion":
+            case "multiplicación":
+            case "*":
+                alert(x * y );
+                break;
+            case "division":
+            case "división":
+            case "/":
+                if (y === 0) {
+                    alert("En caso de división, el segundo número debe ser diferente a cero<br>");
+                } else {
+                    alert(x / y );
+                }
+                break;
+            default:
+                alert("Operación no válida");
+                break;
+        }
+    }
+}
+
+while (z !== "salir") {
+    calculadora(x, y, z);
+    x = parseInt(prompt("Digite su primer numero"));
+    y = parseInt(prompt("Digite su segundo número"));
+    z = prompt("¿Qué operación desea hacer? (o escribe 'salir' para finalizar)").toLocaleLowerCase();
+    calculadora(x, y, z);
+}
+
+document.write("Gracias por usar la calculadora.");
+
+
+    </script>
+</body>
+
+</html>
